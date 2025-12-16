@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>هدية خاصة لك</title>
+    <link rel="stylesheet" href="style.css"> 
+</head>
+<body>
+    <div id="lockScreen" class="screen">
+        <div class="lock-box">
+            <h1>أهلاً بك! هذه هدية خاصة جداً...</h1>
+            <p>لفتح الهدية، يرجى إدخال كلمة السر:</p>
+            <input type="password" id="passwordInput" placeholder="كلمة السر">
+            <button onclick="checkPassword()">افتح الهدية</button>
+            <p id="message" class="error-message"></p>
+        </div>
+    </div>
+
+    <div id="giftContent" class="screen hidden">
+        <div class="gift-box">
+            <h1 class="christmas-title">🎄 عيد ميلاد مجيد! 🎅</h1>
+            
+            <p class="special-message">
+                يا أغلى إنسان، هذه رسالة بسيطة مني لك. 
+                أردت أن تكون هذه الهدية الرقمية ذكرى جميلة نعود إليها.
+                أتمنى أن تسعد بها، أحبك!
+            </p>
+            
+            <button onclick="startJourney()">ابدأ رحلة الذكريات</button>
+
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
