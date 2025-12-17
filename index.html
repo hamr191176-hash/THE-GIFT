@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>المفاجأة الملكية 🌹</title>
+  <title>هدية 3D مذهلة 🌹</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -12,45 +12,35 @@
 
 <div class="space-bg"></div>
 
-<audio id="bgMusic1" src="19f7328039ae3e1c46d5406cce013e5a_mix_80.mp3" loop></audio>
-<audio id="bgMusic2" src="أغنية_هادئة.mp3" loop></audio> <div class="container">
-  <div class="card" id="login-card">
-    <div class="flower-header">🌸🌹💐🌹🌸</div>
-    <h1>🎁 الهدية الملكية</h1>
-    <input type="password" id="password" placeholder="كلمة السر">
-    <button onclick="unlockGift()">فتح المفاجأة 🌹</button>
-    <p class="error" id="error"></p>
-  </div>
-
-  <div class="card hidden" id="gift-card">
-    <div class="box-3d">
-      <div class="face front"></div><div class="face back"></div>
-      <div class="face left"></div><div class="face right"></div>
-      <div class="face top" id="lid"></div><div class="face bottom"></div>
-    </div>
-    <h2 class="reveal-text">🎉 أحلى مفاجأة! ❤️</h2>
-    <button class="next-btn" onclick="showGallery()">دخول معرض الذكريات ✨</button>
-  </div>
-
-  <div class="gallery-screen hidden" id="gallery-screen">
-    <div class="glass-container">
-      <div class="photo-frame">
-        <img id="main-img" src="image1.jpg" alt="Memory"> </div>
-      <div class="caption">أجمل اللحظات معكِ ❤️</div>
-      <button class="back-btn" onclick="location.reload()">إعادة التجربة ↩️</button>
-    </div>
-  </div>
+<div class="flower-header">
+    <span>🌸</span><span>🌹</span><span>💐</span><span>🌹</span><span>🌸</span>
 </div>
 
-<script src="script.js"></script>
-</body>
-</html>
+<audio id="bgMusic" loop>
+  <source src="19f7328039ae3e1c46d5406cce013e5a_mix_80.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container">
+  <div class="card" id="card">
+    <div id="login-ui">
+        <h1>🎁 الهدية الملكية</h1>
+        <p>أدخل كلمة السر لرؤية المفاجأة</p>
+        <input type="password" id="password" placeholder="كلمة السر">
+        <button onclick="unlockGift()">فتح الهدية 🌹</button>
+        <p class="error" id="error"></p>
+    </div>
+
+    <div id="gift-scene" class="hidden">
+        <div class="box-3d">
+            <div class="face front"></div>
+            <div class="face back"></div>
             <div class="face left"></div>
             <div class="face right"></div>
             <div class="face top" id="lid"></div>
             <div class="face bottom"></div>
         </div>
         <h2 class="reveal-text">🎉 أحلى مفاجأة لأغلى الناس! ❤️</h2>
+        <button class="back-btn" onclick="resetPage()">عودة للخلف ↩️</button>
     </div>
   </div>
 </div>
@@ -58,4 +48,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
