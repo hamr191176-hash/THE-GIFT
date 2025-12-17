@@ -1,27 +1,45 @@
-const correctPassword = "farah";
+const correctPassword = "1234";      // كلمة السر
+const personName = "عمرو";          // اسم الشخص
 
-function unlockGift() {
-    const pass = document.getElementById("password").value;
-    const music = document.getElementById("bgMusic");
+function openGift() {
+  const pass = document.getElementById("password").value;
+  const error = document.getElementById("error");
+  const btn = document.getElementById("giftBtn");
+  const text = btn.querySelector(".btn-text");
+  const loader = btn.querySelector(".loader");
+  const music = document.getElementById("bgMusic");
 
-    // محاولة تشغيل الصوت (يجب أن يتم داخل حدث النقر)
-    music.play().then(() => {
-        music.volume = 0.5;
-    }).catch(err => console.log("خطأ في تشغيل الصوت: ", err));
+  // تشغيل الموسيقى فور الضغط
+  music.volume = 0.4;
+  music.play().catch(e => console.log("تحتاج لتفاعل المستخدم أولاً"));
 
+  error.textContent = "";
+  text.style.display = "none";
+  loader.style.display = "block";
+
+  setTimeout(() => {
     if (pass === correctPassword) {
-        document.getElementById("login-ui").classList.add("hidden");
-        document.getElementById("gift-scene").classList.remove("hidden");
+      // تأثير القصاصات الملونة (Confetti)
+      confetti({
+        particleCount: 150,
+        spread: 70,
+        origin: { y: 0.6 }
+      });
 
-        setTimeout(() => {
-            document.getElementById("lid").classList.add("open-lid");
-            confetti({ particleCount: 150, spread: 70, origin: { y: 0.6 } });
-        }, 500);
+      document.getElementById("card").innerHTML = `
+        <div class="gift-box">
+          <div class="lid"></div>
+        </div>
+        <h1 style="color:#fff">🎉 مفاجأة يا ${personName}</h1>
+        <p style="color:#facc15; font-size:20px; font-weight:bold;">
+          الهدية دي معمولة مخصوص ليك ❤️
+        </p>
+        <button onclick="location.reload()" style="background:#334155; margin-top:20px;">رجوع</button>
+      `;
     } else {
-        document.getElementById("error").textContent = "كلمة السر خطأ!";
+      loader.style.display = "none";
+      text.style.display = "inline";
+      error.textContent = "❌ كلمة السر غير صحيحة يا بطل";
     }
-}
-
-function resetPage() {
-    location.reload(); // إعادة تحميل الصفحة للعودة للبداية
+  }, 1500);
 }
