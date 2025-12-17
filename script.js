@@ -1,4 +1,4 @@
-const correctPassword = "1234";      // كلمة السر
+const correctPassword = "12234";      // كلمة السر
 const personName = "عمرو";          // اسم الشخص
 
 function openGift() {
@@ -43,3 +43,4 @@ function openGift() {
     }
   }, 1500);
 }
+
