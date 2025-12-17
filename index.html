@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>هدية عمرو الخاصة 🌹</title>
+  <title>هدية خاصة 🌹</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -12,18 +12,17 @@
 
 <div class="space-bg"></div>
 
-<div class="flower-bouquet right-flowers">🌸🌹💐</div>
-<div class="flower-bouquet left-flowers">💐🌹🌸</div>
+<div class="flower-header">🌸🌹💐🌹🌸</div>
 
-<audio id="bgMusic" preload="auto">
+<audio id="bgMusic" loop>
   <source src="19f7328039ae3e1c46d5406cce013e5a_mix_80.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container">
   <div class="card" id="card">
     <div id="ui-content">
-        <h1 class="glow-text">🎁 الهدية الملكية</h1>
-        <p>اكتب كلمة السر لفتح المفاجأة</p>
+        <h1>🎁 الهدية الملكية</h1>
+        <p>أدخل كلمة السر لفتح المفاجأة</p>
         <input type="password" id="password" placeholder="كلمة السر">
         <button id="giftBtn" onclick="unlockGift()">
           <span class="btn-text">افتح الهدية 🌹</span>
@@ -41,7 +40,8 @@
             <div class="face top" id="lid"></div>
             <div class="face bottom"></div>
         </div>
-        <h2 class="reveal-text">🎉 أحلى مفاجأة لأغلى الناس! ❤️</h2>
+        <h2 class="reveal-text">🎉 أحلى مفاجأة يا بطل! ❤️</h2>
+        <button class="back-btn" onclick="location.reload()">عودة ↩️</button>
     </div>
   </div>
 </div>
