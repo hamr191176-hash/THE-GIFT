@@ -1,37 +1,30 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>هدية خاصة لك</title>
-    <link rel="stylesheet" href="style.css"> 
+  <meta charset="UTF-8">
+  <title>هدية خاصة</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="lockScreen" class="screen">
-        <div class="lock-box">
-            <h1>أهلاً بك! هذه هدية خاصة جداً...</h1>
-            <p>لفتح الهدية، يرجى إدخال كلمة السر:</p>
-            <input type="password" id="passwordInput" placeholder="كلمة السر">
-            <button onclick="checkPassword()">افتح الهدية</button>
-            <p id="message" class="error-message"></p>
-        </div>
+
+<div class="container">
+  <div class="card" id="card">
+    <div class="gift-icon">🎁</div>
+
+    <h1>أهلاً بك! هذه هدية<br>خاصة جدًا...</h1>
+    <p>لفتح الهدية، يرجى إدخال كلمة السر:</p>
+
+    <div class="input-box">
+      <input type="password" id="password" placeholder="كلمة السر">
+      <span id="toggle">👁️</span>
     </div>
 
-    <div id="giftContent" class="screen hidden">
-        <div class="gift-box">
-            <h1 class="christmas-title">🎄 عيد ميلاد مجيد! 🎅</h1>
-            
-            <p class="special-message">
-                يا أغلى إنسان، هذه رسالة بسيطة مني لك. 
-                أردت أن تكون هذه الهدية الرقمية ذكرى جميلة نعود إليها.
-                أتمنى أن تسعد بها، أحبك!
-            </p>
-            
-            <button onclick="startJourney()">ابدأ رحلة الذكريات</button>
+    <button onclick="openGift()">افتح الهدية</button>
+    <p class="error" id="error"></p>
+  </div>
+</div>
 
-            </div>
-    </div>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
