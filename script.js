@@ -1,4 +1,4 @@
-const correctPassword = "1234";
+const correctPassword = "farah";
 
 function unlockGift() {
     const pass = document.getElementById("password").value;
