@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>هدية 3D خاصة</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>هدية 3D مذهلة</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
@@ -11,25 +11,35 @@
 <body>
 
 <div class="space-bg"></div>
-<div class="stars"></div>
 
-<audio id="bgMusic" loop>
+<audio id="bgMusic" preload="auto">
   <source src="19f7328039ae3e1c46d5406cce013e5a_mix_80.mp3" type="audio/mpeg">
 </audio>
 
 <div class="container">
   <div class="card" id="card">
-    <h1>🎁 هدية سرية</h1>
-    <p>اكتب كلمة السر لفتح الهدية</p>
+    <div id="ui-content">
+        <h1>🎁 الهدية الغامضة</h1>
+        <p>أدخل كلمة السر لرؤية المفاجأة</p>
+        <input type="password" id="password" placeholder="كلمة السر">
+        <button id="giftBtn" onclick="unlockGift()">
+          <span class="btn-text">فتح الصندوق السحري</span>
+          <span class="loader"></span>
+        </button>
+        <p class="error" id="error"></p>
+    </div>
 
-    <input type="password" id="password" placeholder="كلمة السر">
-
-    <button id="giftBtn" onclick="openGift()">
-      <span class="btn-text">افتح الهدية</span>
-      <span class="loader"></span>
-    </button>
-
-    <p class="error" id="error"></p>
+    <div id="gift-scene" class="hidden">
+        <div class="box-3d">
+            <div class="face front"></div>
+            <div class="face back"></div>
+            <div class="face left"></div>
+            <div class="face right"></div>
+            <div class="face top" id="lid"></div>
+            <div class="face bottom"></div>
+        </div>
+        <h2 class="reveal-text">🎉 مفاجأة يا بطل! ❤️</h2>
+    </div>
   </div>
 </div>
 
